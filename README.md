@@ -14,6 +14,8 @@ or with [ZRG3M](https://ictk-solution-dev.github.io/zrg3m/zrg3m-GettingStarted.h
  * [Datasheet](https://ictk-solution-dev.github.io/zrg3m/files/ZRG3M-Datasheet-v0.1c.pdf)
  * [ZRG3M github repository](https://github.com/ictk-solution-dev/zrg3m)
 
+check [amazon-freertos](https://github.com/ictk-solution-dev/amazon-freertos) and [amazon-freertos-zrg3m](https://github.com/ictk-solution-dev/amazon-freertos-zrg3m-)
+
 ---
 ### ICTK HOLDINGS web page for Support or Contact
 For more informations, ckeck [ictk.com](https://ictk.com)
