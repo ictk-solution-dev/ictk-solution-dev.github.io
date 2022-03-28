@@ -1,0 +1,798 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML>
+<HEAD>
+	<META HTTP-EQUIV="CONTENT-TYPE" CONTENT="text/html; charset=utf-8">
+	<TITLE></TITLE>
+	<META NAME="GENERATOR" CONTENT="LibreOffice 4.1.6.2 (Linux)">
+	<META NAME="AUTHOR" CONTENT="nayoung kim">
+	<META NAME="CREATED" CONTENT="20200817;52800000000000">
+	<META NAME="CHANGEDBY" CONTENT="DoKyung">
+	<META NAME="CHANGED" CONTENT="20200820;50800000000000">
+	<META NAME="AppVersion" CONTENT="16.0000">
+	<META NAME="DocSecurity" CONTENT="0">
+	<META NAME="HyperlinksChanged" CONTENT="false">
+	<META NAME="LinksUpToDate" CONTENT="false">
+	<META NAME="ScaleCrop" CONTENT="false">
+	<META NAME="ShareDoc" CONTENT="false">
+	<STYLE TYPE="text/css">
+	<!--
+		@page { margin-left: 1in; margin-right: 1in; margin-top: 1.18in; margin-bottom: 1in }
+		P { margin-bottom: 0.08in; direction: ltr; widows: 0; orphans: 0 }
+		A:link { color: #0000ff; so-language: zxx }
+	-->
+	</STYLE>
+</HEAD>
+<BODY LANG="en-US" LINK="#0000ff" DIR="LTR">
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Getting
+Started with the ICTK ZWG3M </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Overview</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>This
+tutorial contains instructions for the following getting started
+steps:</FONT></FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connecting
+	your board to a host machine.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
+	tool and script to the host machine for installing applications.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Loading the application
+	binary image to your board, and then run the application.</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Configure Wi-Fi and
+	application specific settings on your board to run FreeRTOS demo.</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Prerequisites</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Before
+you get started with FreeRTOS on your ZWG3M, you need to set up your
+AWS account and permissions.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+create an AWS account, see&nbsp;</FONT></FONT></FONT><A HREF="https://aws.amazon.com/premiumsupport/knowledge-center/create-and-activate-aws-account/"><FONT COLOR="#0366d6"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U>Create
+and Activate an AWS Account</U></FONT></FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+add an IAM user to your AWS account, see IAM User Guide. To grant
+your IAM user account access to AWS IoT and FreeRTOS, attach the
+following IAM policies to your IAM user account:</FONT></FONT></FONT></P>
+<UL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AmazonFreeRTOSFullAccess</FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AWSIoTFullAccess</FONT></FONT></P>
+</UL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+attach the AmazonFreeRTOSFullAccess policy to your IAM user</FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Browse
+	to the&nbsp;</FONT></FONT></FONT><A HREF="https://console.aws.amazon.com/iam/home"><FONT COLOR="#0366d6"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U>IAM
+	console</U></FONT></FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>,
+	and from the navigation pane, choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Users</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Enter
+	your user name in the search text box, and then choose it from the
+	list.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img4.png" NAME="그림 15" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Add
+	permissions</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img5.png" NAME="그림 11" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Attach
+	existing policies directly</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the search box, enter&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Seogoe UI, serif">AmazonFreeRTOSFullAccess</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>,
+	choose it from the list, and then choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Next:
+	Review</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img6.png" NAME="그림 12" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=6>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Add
+	permissions</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+attach the AWSIoTFullAccess policy to your IAM user</FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Browse
+	to the&nbsp;</FONT></FONT></FONT><A HREF="https://console.aws.amazon.com/iam/home"><FONT COLOR="#0366d6"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U>IAM
+	console</U></FONT></FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>,
+	and from the navigation pane, choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Users</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Enter
+	your user name in the search text box, and then choose it from the
+	list.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Add
+	permissions</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Attach
+	existing policies directly</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the search box, enter&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Consolas, serif">AWSIoTFullAccess</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>,
+	choose it from the list, and then choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Next:
+	Review</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Add
+	permissions</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+more information about IAM and user accounts, see&nbsp;</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/IAM/latest/UserGuide/"><FONT COLOR="#0366d6"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U>IAM
+User Guide</U></FONT></FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+more information about policies, see&nbsp;</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/IAM/latest/UserGuide/introduction_access-management.html"><FONT COLOR="#0366d6"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U>IAM
+Permissions and Policies</U></FONT></FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Set
+Up the ZWG3M Hardware</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+your host computer to ZWG3M</FONT></FONT></FONT></P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+	the J1 UART connector using FT232 USB UART </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+	J6 using USB UART to send and receive AT command messages during
+	operation.  </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Ensure
+	the UART_DL(JP3) is set to low and JP1 = H_BOOT for download mode. </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-top: 0.04in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img1.png" NAME="그림 4" ALIGN=BOTTOM WIDTH=501 HEIGHT=332 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Set
+Up Your Development Environment</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+communicate with your board, you need to download and install a
+firmware and configure board with AT command</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Download
+and install Flash tool (MTK lab) and firmware </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+	set up your environment, please download </FONT></FONT></FONT><A HREF="https://docs.labs.mediatek.com/resource/mt2523/en/downloads"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>IoT
+	Flashtool for MT7686</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+	Install them on your host computer.</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Download
+	the </FONT></FONT></FONT><A HREF="https://github.com/ictk-solution-dev/amazon-freertos-demo.git"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>latest
+	firmware along with build application</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for your convenience. Re-locate or copy these four files in the IoT
+	Flashtool folder you downloaded above.  </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">zwg3m_flash.bat</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.44in; text-indent: 0.56in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">Flash_download.cfg</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">aws_demos.bin</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">mt768X_default_PerRate_TxPwr.bin</FONT></FONT></P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify
+	zwg3m_flash.bat and flash_donwload.cfg with the correct path.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.31in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>zwg3m_flash.bat
+</FONT></FONT></FONT>
+</P>
+<OL>
+	<OL>
+		<UL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>set
+			comport=COMXX</FONT></FONT></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>set
+			pathexe=XXXXXX</FONT></FONT></FONT>
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>\IoT_Flash_Tool_Windows\coda.exe</FONT></FONT></FONT></P>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>set
+			param1=XXXX \IoT_Flash_Tool_Windows\flash_download.cfg --UART
+			%comport% -f -d --reset</FONT></FONT></FONT></P>
+		</UL>
+	</OL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; text-indent: 0.31in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>flash_download.cfg
+</FONT></FONT></FONT>
+</P>
+<OL>
+	<OL>
+		<UL>
+			<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff">
+			<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Set
+			the correct path for aws_demos.bin (demo) &amp;
+			mt768x_default_PerRate_TxPwr.bin </FONT></FONT></FONT>
+			</P>
+		</UL>
+	</OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
+	zwg3m_flash.bat </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>When
+	you see the message below, </FONT></FONT></FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>press
+	the reset button</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for download firmware. </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img2.png" NAME="그림 3" ALIGN=BOTTOM WIDTH=549 HEIGHT=287 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img3.png" NAME="graphics1" ALIGN=BOTTOM WIDTH=268 HEIGHT=254 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.19in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=4 STYLE="font-size: 15pt"><B>Configure
+ZWG3M board for FreeRTOS demo project </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif">* Implementation
+is based on MQTT version 3.1.1 and TLS 1.2 with
+ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 ciphersuite.<BR>* private key and
+certificates are encrypted in HW-based security chip, supports
+enhanced secured working structure.</FONT></FONT> 
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#ff0000">* </FONT><FONT COLOR="#ff0000"><FONT FACE="Segoe UI, serif">ZWG3M
+provides TRNG(True Random Number Generator) for best security. When the MCU performs TRNG Read
+through I/O ports, it reads 32-bit value.</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Prerequisites
+</B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; text-indent: 0.11in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">• </FONT><FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>CA
+certificate </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; text-indent: 0.11in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>A
+client certificate </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1in; text-indent: 0.11in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">•  </FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>A
+client private key </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.19in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="굴림, serif"><FONT SIZE=3><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">ZWG3M
+support ECC but not RSA. Please prepare your own ECC certificate and
+key to connect AWS IoT. Please use this guide to create your own ECC
+certificates : </FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/openssl_guide.html"><FONT FACE="Segoe UI, serif">Create
+ECC certificate guide</FONT></A></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Connect
+to AWS IoT Core </B></FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Log
+	in to the&nbsp;</FONT></FONT></FONT><A HREF="https://aws.amazon.com/console/"><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><U><B>AWS
+	Management Console</B></U></FONT></FONT></FONT></A></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Choose
+		<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img22.png" NAME="shape1025" ALIGN=BOTTOM WIDTH=13 HEIGHT=13 BORDER=0></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>
+	IoT Core service</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	 </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the left navigation pane, click on&nbsp;</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Manage/Things</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	</FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img7.png" NAME="그림 2" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2"><A NAME="_GoBack"></A>
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
+	on create button and give your device a name and press create</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img8.png" NAME="그림 7" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=5>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>On
+	the Certificate page, choose </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Use
+	my certificate</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img9.png" NAME="그림 6" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=6>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Select
+	or register CA</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	for your own certificate to register </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+CA register, refer to </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/register-CA-cert.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/register-CA-cert.html</FONT></FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img10.png" NAME="graphics2" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=7>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Upload
+	your own certificate </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+Register your certificate, refer to </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/manual-cert-registration.html"><FONT FACE="Arial, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/manual-cert-registration.html</FONT></FONT></A></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img11.png" NAME="그림 9" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=8>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>In
+	the left navigation pane, choose </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Policies</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	under Secure menu</FONT></FONT></FONT></P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Click
+	on the Create button and define a policy. The specific permission
+	policies can vary for your use cases. For non-dev environments, all
+	devices in your fleet must have credentials with privileges that
+	authorize intended actions only, which include (but not limited to)
+	AWS IoT MQTT actions such as publishing messages or subscribing to
+	topics with specific scope and context. Identify the permission
+	policies that best meet your business and security requirements. </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+sample policies, refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/example-iot-policies.html</FONT></FONT></A><FONT COLOR="#000000"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Also
+refer to</FONT></FONT></FONT><FONT COLOR="#000000"><FONT FACE="Arial, serif"><FONT SIZE=3>
+</FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>https://docs.aws.amazon.com/iot/latest/developerguide/security-best-practices.html</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT>
+</P>
+
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img12.png" NAME="그림 18" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>&lt;
+policy statements&gt; </FONT></FONT></FONT>
+</P>
+
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;Version&quot;: &quot;2012-10-17&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>&quot;Statement&quot;: [<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: &quot;iot:Connect&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Resource&quot;:
+&quot;arn:aws:iot:XXXXX:client/${iot:Connection.Thing.ThingName}&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>},<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>{<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Effect&quot;: &quot;Allow&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Action&quot;: [<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:57.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>&quot;iot:Subscribe&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:35.7pt;margin-bottom:.0001pt;text-align:left;
+text-indent:22.15pt;line-height:12.0pt;mso-pagination:widow-orphan;background:
+white;text-autospace:ideograph-numeric ideograph-other;word-break:keep-all'><span
+lang=EN-US style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>&quot;iot:Receive&quot;,<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:35.7pt;margin-bottom:.0001pt;text-align:left;
+text-indent:22.15pt;line-height:12.0pt;mso-pagination:widow-orphan;background:
+white;text-autospace:ideograph-numeric ideograph-other;word-break:keep-all'><span
+lang=EN-US style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>&quot;iot:Publish&quot;<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span>&quot;Resource&quot;: <span style='mso-spacerun:yes'>&nbsp;</span>“*”<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span
+style='mso-spacerun:yes'>&nbsp;&nbsp;&nbsp; </span>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><span style='mso-spacerun:yes'>&nbsp;
+</span>]<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'>}<o:p></o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+<p class=MsoNormal align=left style='margin-top:0cm;margin-right:0cm;
+margin-bottom:0cm;margin-left:17.85pt;margin-bottom:.0001pt;text-align:left;
+line-height:12.0pt;mso-pagination:widow-orphan;background:white;text-autospace:
+ideograph-numeric ideograph-other;word-break:keep-all'><span lang=EN-US
+style='font-size:10.0pt;font-family:"Segoe UI",sans-serif;mso-fareast-font-family:
+굴림;color:#24292E;mso-font-kerning:0pt'><o:p>&nbsp;</o:p></span></p>
+
+
+<BR>
+</P>
+<OL START=10>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"> <FONT FACE="Segoe UI, serif"><FONT SIZE=3>Go
+	to the certificates page, click on the three dots of your
+	certificate and attach the policy to the certificate </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.14in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img13.png" NAME="그림 10" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Setting
+up the ZWG3M device </B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>This
+Python scripts allow users to set Wi-Fi information and application
+specific settings in order to connect the board with the AWS IoT. </FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2"><A NAME="_Hlk48218916"></A>
+	<FONT FACE="Segoe UI, serif"><FONT SIZE=3>Do</FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>wnload
+	all python scripts from </FONT></FONT></FONT><A HREF="https://github.com/ictk-solution-dev/zwg3m-py"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>the
+	ICTK GitHub repository</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	to a zwg3m-py folder. </FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Use
+	this guide to provision the certificate to ZWG3M: </FONT></FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/zwg3m-Certificate.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>getting
+	started-provisioning certificate guide</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+	</FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Modify
+	wifi.json and aws.json files according to your settings.</FONT></FONT></FONT></P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Please
+have your host URL, thing name and client ID ready to configure your
+device. Use port num as 8883 for secure-MQTT protocol. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>User
+can find </FONT></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>aws_host_url</I></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+from the </FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B><A HREF="https://aws.amazon.com/console/">AWS
+Management Console</A>.</B></FONT></FONT></FONT><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+Go to IoT core and click the settings at the left pane. Please make a
+copy of the Endpoint and use them as </FONT></FONT></FONT><FONT FACE="Segoe UI , serif"><FONT SIZE=2 STYLE="font-size: 11pt"><I>aws_host_url</I></FONT></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 9pt"><I>.</I></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img14.png" NAME="그림 13" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.78in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">wifi.json
+</FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img15.png" NAME="shape1026" ALIGN=BOTTOM WIDTH=342 HEIGHT=171 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 10pt">aws.json</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img16.png" NAME="shape1027" ALIGN=BOTTOM WIDTH=348 HEIGHT=106 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Run
+	zwg3m_configuration.py to configure settings of your device.  </FONT></FONT></FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Available
+port will be shown in windows. Once user selects the port for the
+ZWG3M, it will be stored in json file name 'zwg3m.json’.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.53in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>configuration
+process </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 0.28in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img17.png" NAME="shape1028" ALIGN=BOTTOM WIDTH=530 HEIGHT=240 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.39in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Wi-Fi
+and AWS setting that was written on json files will be configured.
+Please reset the board after the configuration.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Monitoring
+MQTT messages on the Cloud</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>You
+can use the MQTT client in the AWS IoT console to monitor the
+messages that your device sends to the AWS Cloud. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>To
+subscribe to the MQTT topic with the AWS IoT MQTT client </FONT></FONT></FONT>
+</P>
+<OL>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Sign
+	in to the </FONT></FONT></FONT><A HREF="https://console.aws.amazon.com/iotv2/"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>AWS
+	IoT console</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+	</FONT></FONT></FONT>
+	</P>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>I</FONT></FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt">n
+	the navigation pane, choose </FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Test
+	</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">to open the MQTT
+	client. </FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img18.png" NAME="graphics3" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=3>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT SIZE=2 STYLE="font-size: 11pt">In </FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Subscription
+	topic </B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">enter
+	</FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>iotdemo/topic/#</B></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">,
+	</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt">select </FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Display
+	Payloads as Strings</B></FONT><FONT FACE="Segoe UI, serif"><FONT SIZE=2 STYLE="font-size: 11pt">&quot;
+	</FONT></FONT><FONT SIZE=2 STYLE="font-size: 11pt">and then click
+	</FONT><FONT SIZE=2 STYLE="font-size: 11pt"><B>Subscribe to topic</B></FONT><FONT SIZE=2 STYLE="font-size: 11pt">.
+	A ‘#’ symbol at the end of a topic name acts as wildcard. i.e. </FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img20.png" NAME="graphics4" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<OL START=4>
+	<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+	<FONT SIZE=2 STYLE="font-size: 11pt">Press the reset button on ZWG3M
+	to start the demo. MQTT messages appear on the iotdemo/topic/# as
+	below. </FONT>
+	</P>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img19.png" NAME="graphics5" ALIGN=BOTTOM WIDTH=800 HEIGHT=433 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-left: 0.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; border-top: none; border-bottom: 1px solid #eaecef; border-left: none; border-right: none; padding-top: 0in; padding-bottom: 0.06in; padding-left: 0in; padding-right: 0in; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=5><B>Troubleshooting
+</B></FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Download
+fail</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>If
+you encounter errors while downloading firmware, check the comport
+number and path in zwg3m_flash.bat and flash_download.cfg.</FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Ensure
+the UART_DL(JP3) is set to low and JP1 = H_BOOT for download mode. </FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<IMG SRC="img/zwg3m-GettingStarted-FreeRTOS-Demo/img21.png" NAME="그림 43" ALIGN=BOTTOM WIDTH=400 HEIGHT=350 BORDER=0></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-top: 0.25in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3><B>Connection
+fail</B></FONT></FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Be
+sure to configure AWS IoT and your FreeRTOS download to connect your
+device to the AWS Cloud. You can use below steps to check the device
+settings. </FONT></FONT></FONT>
+</P>
+<OL>
+	<OL>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+		<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Connect
+		the device with host computer</FONT></FONT></FONT></P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+		<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Open
+		terminal program (ex. hterm) </FONT></FONT></FONT>
+		</P>
+		<LI><P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+		<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Check
+		settings using </FONT></FONT></FONT><A HREF="https://ictk-solution-dev.github.io/zwg3m/files/ZWG3M-ATcommand-v1.0.pdf"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>AT
+		command set</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>
+		. Make sure all the configurations are set correctly. </FONT></FONT></FONT>
+		</P>
+	</OL>
+</OL>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">ex) AT+AWS_EP ?  
+	+AWS_EP: your_host_url  </FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e">   <FONT FACE="Segoe UI, serif">AT+AWS_TN? 
+		+AWS_TN: your thing name</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; text-indent: 0.21in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AT+WIFI_SSID_STA? 
+ 	+WIFI_SSID_STA : your Wi-Fi ID</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-left: 1.5in; text-indent: 0.21in; margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif">AT+WIFI_PW_STA? 
+	+WIFI_PW_STA : your Wi-Fi password</FONT></FONT></P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<BR><BR>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>For
+general troubleshooting information about Getting Started with
+FreeRTOS, see </FONT></FONT></FONT><A HREF="https://docs.aws.amazon.com/freertos/latest/userguide/gsg-troubleshooting.html"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>Troubleshooting
+getting started</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.
+</FONT></FONT></FONT>
+</P>
+<P ALIGN=LEFT STYLE="margin-bottom: 0.17in; background: #ffffff; line-height: 100%; widows: 2; orphans: 2">
+<FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>If
+these steps don’t work, please contact </FONT></FONT></FONT><A HREF="mailto:zn@ictk.com"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>zn@ictk.com</FONT></FONT></A><FONT COLOR="#24292e"><FONT FACE="Segoe UI, serif"><FONT SIZE=3>.</FONT></FONT></FONT></P>
+</BODY>
+</HTML>
