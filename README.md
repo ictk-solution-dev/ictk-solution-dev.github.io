@@ -1,40 +1,22 @@
-# 여도경 졸지좀마...!!!!!!
+# ICTK HOLDINGS DOCUMENTATION
+## H/W root of trust for enhanced security with AWS IoT management system
 
+Getting Started with [ZWG3M](https://ictk-solution-dev.github.io/zwg3m/zwg3m-GettingStarted.html)
+ * [module](https://ictk-solution-dev.github.io/zwg3m/zwg3m-module.html)
+ * [GettingStarted-FreeRTOS-Demo](https://ictk-solution-dev.github.io/zwg3m/zwg3m-GettingStarted-FreeRTOS-Demo.html)
+ * [zwg3m-Secured Iot Platform](https://ictk-solution-dev.github.io/zwg3m/zwg3m-Secured%20Iot%20Platform.html)
+ * [Datasheet](https://ictk-solution-dev.github.io/zwg3m/files/ZWG3M-Datasheet-v1.0.pdf)
+ * [ZWG3M github repository](https://github.com/ictk-solution-dev/zwg3m)
 
-## Welcome to GitHub Pages
+or with [ZRG3M](https://ictk-solution-dev.github.io/zrg3m/zrg3m-GettingStarted.html)
+ * [zrg3m-GettingStarted-FreeRTOS-Demo](https://ictk-solution-dev.github.io/zrg3m/zrg3m-GettingStarted-FreeRTOS-Demo.html)
+ * [zrg3m-Secured Iot Platform](https://ictk-solution-dev.github.io/zrg3m/zrg3m-Secured%20Iot%20Platform.html)
+ * [Datasheet](https://ictk-solution-dev.github.io/zrg3m/files/ZRG3M-Datasheet-v0.1c.pdf)
+ * [ZRG3M github repository](https://github.com/ictk-solution-dev/zrg3m)
 
-You can use the [editor on GitHub](https://github.com/ictk-solution-dev/ictk-solution-dev.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+check repositories [amazon-freertos](https://github.com/ictk-solution-dev/amazon-freertos) and [amazon-freertos-zrg3m](https://github.com/ictk-solution-dev/amazon-freertos-zrg3m-)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+---
+### ICTK HOLDINGS web page for Support or Contact
+For more informations, ckeck [ictk.com](https://ictk.com)
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/ictk-solution-dev/ictk-solution-dev.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
